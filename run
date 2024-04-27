@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eux
+
+# opam exec -- dune exec markdown_of_pukiwiki
+
+cat "$1" | opam exec -- dune exec pukiwiki_of_markdown > /tmp/puki.txt
