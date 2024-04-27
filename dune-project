@@ -19,7 +19,16 @@
  (name pukiwiki_of_markdown)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune core async)
+ (depends 
+   ocaml 
+   dune 
+   core 
+   async
+   js_of_ocaml
+   js_of_ocaml-compiler
+   js_of_ocaml-ppx
+   ppx
+   )
  (tags
   (topics "to describe" your project)))
 

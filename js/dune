@@ -1,0 +1,11 @@
+(executable
+ (name js)
+ (modes js)
+ (preprocess
+  (pps js_of_ocaml-ppx))
+ (libraries
+   pukiwiki_of_markdown 
+   core 
+   str 
+   js_of_ocaml))
+

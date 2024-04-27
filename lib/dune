@@ -1,2 +1,3 @@
 (library
- (name pukiwiki_of_markdown))
+ (name pukiwiki_of_markdown)
+ (libraries core str))

@@ -1,0 +1,84 @@
+body {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  color: #303030;
+  padding: 10px;
+}
+
+#container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 800px;
+  border: 1px solid gray;
+  font-size: 14pt;
+  margin-top: 20pt;
+  border: none;
+}
+
+#left-pane,
+#right-pane {
+  /* border: gray 2px solid; */
+  width: 45%;
+  height: 100%;
+  margin: 0pt;
+  padding: 0pt;
+  border: 1px solid #3efefe;
+}
+
+#left-pane > .title,
+#right-pane > .title {
+  /* border: gray 2px solid; */
+  width: auto;
+  height: 20pt;
+  background-color: #3efefe;
+  padding: 5pt;
+}
+
+#right-pane > .title:hover {
+  /* border: gray 2px solid; */
+  background-color: #3eeeee;
+  cursor: pointer;
+}
+
+#input,
+#output {
+  /* border: gray 2px solid; */
+  width: calc(100% - 20pt);
+  height: calc(100% - 50pt);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  overflow-y: scroll;
+  margin: 0pt;
+  padding: 10pt;
+  border: none;
+  resize: none;
+  color: #303030;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  color: #303030;
+  outline: none;
+}
+
+#convert-button {
+  height: 100%;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  color: #303030;
+}

@@ -1,4 +1,9 @@
 (executable
  (public_name pukiwiki_of_markdown)
  (name main)
- (libraries pukiwiki_of_markdown core str async))
+ (libraries 
+   pukiwiki_of_markdown 
+   core 
+   str 
+   async
+   ))

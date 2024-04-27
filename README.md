@@ -41,6 +41,15 @@ Usage:
 `pukiwiki_of_markdown` にコマンドライン引数として受け取ったファイルの内容を標準入力し，
 `/tmp/puki.txt` へ書き込む．
 
+## Web UI
+
+```
+cd js
+dune build ./js.bc.js
+cd ..
+sudo cp _build/default/js/js.bc.js webui
+```
+
 ## Background
 
 当初は pukiwiki を markdown へ変換しようとしていたが，
