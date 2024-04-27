@@ -9,7 +9,9 @@ markdown から pukiwiki への変換ツール．
   - ok: heading
   - ok: horizontal line
   - ok: link
+  - ok: code block
   - ng: table
+  - ng: inline clode
 
 ## How to use
 
