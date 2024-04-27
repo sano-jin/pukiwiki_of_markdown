@@ -21,7 +21,7 @@
     <div id="container">
       <div id="left-pane">
         <div class="title">Markdown</div>
-        <textarea id="input" name="story" rows="5" cols="33">
+        <textarea id="input" name="story" rows="5" cols="33" oninput="convert()">
 環境構築周り，サボりがちなので一応メモしておきます．
 
 - linux 初心者なので，ここに書いてなくて，なんか役に立つの・面白いのとかあったら是非教えてください．
@@ -120,15 +120,6 @@ htop
         >
       </div>
 
-      <button
-        type="button"
-        id="convert-button"
-        name="name"
-        value="値"
-        onclick="convert()"
-      >
-        &gt;
-      </button>
 
       <div id="right-pane">
         <div class="title" id="copy-button" onclick="copy()">Pukiwiki (Click to copy)</div>

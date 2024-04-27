@@ -25,7 +25,7 @@ body {
 #left-pane,
 #right-pane {
   /* border: gray 2px solid; */
-  width: 45%;
+  width: 49%;
   height: 100%;
   margin: 0pt;
   padding: 0pt;
@@ -39,6 +39,30 @@ body {
   height: 20pt;
   background-color: #3efefe;
   padding: 5pt;
+  padding-left: 20pt;
+  position: relative;
+}
+
+#left-pane > .title::before,
+#right-pane > .title::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #3efefe;
+}
+
+#left-pane > .title::before {
+  right: -20px;
+  border-left: 20px solid #3efefe;
+}
+
+#right-pane > .title::before {
+  left: -1px;
+  z-index: 1;
+  border-left: 20px solid white;
 }
 
 #right-pane > .title:hover {
@@ -70,8 +94,10 @@ body {
   outline: none;
 }
 
-#convert-button {
+#middle-pane {
+  text-align: center;
   height: 100%;
+  line-height: 100%;
   font-weight: 400;
   font-style: normal;
   font-size: 14pt;
