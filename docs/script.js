@@ -25,12 +25,9 @@ const copy = () => {
   copyButton.innerText = "Pukiwiki (Copyied)";
 
   const myCallback = () => {
-    // Your code here
-    // Parameters are purely optional.
-    console.log(1);
     copyButton.innerText = "Pukiwiki (Click to copy)";
   };
-  const intervalID = setInterval(myCallback, 3000);
+  setInterval(myCallback, 3000);
 };
 
 window.onload = () => {
