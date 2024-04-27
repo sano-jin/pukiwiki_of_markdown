@@ -52,11 +52,11 @@ let pukiwiki_of_markdown md =
     let rcode = Str.regexp "```.*\n" in
     let code_indent str =
       let r = Str.regexp "^" in
-      str |> Str.global_replace r {| |}
+      String.rstrip str |> Str.global_replace r {| |}
     in
     let rec loop = function
       | [] -> ""
-      | str :: code :: t -> str ^ code_indent code ^ loop t
+      | str :: code :: t -> str ^ code_indent code ^ "\n" ^ loop t
       | str :: t -> str ^ loop t
     in
     md |> Str.split_delim rcode |> loop
