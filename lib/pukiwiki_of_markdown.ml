@@ -64,8 +64,8 @@ let pukiwiki_of_markdown md =
     in
     md |> Str.split_delim rcode |> loop
   in
-  md |> conv_hr |> conv_ulist |> conv_olist |> conv_heading |> conv_link |> conv_code
-  |> conv_space
+  md |> conv_hr |> conv_ulist |> conv_olist |> conv_space |> conv_heading |> conv_link
+  |> conv_code
 
 (** Translate pukiwiki syntax to the markdown syntax. *)
 let _markdown_of_pukiwiki pukiwiki =
