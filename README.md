@@ -5,11 +5,12 @@ markdown から pukiwiki への変換ツール．
 - 動作原理：
   正規表現で置換するだけ．
 - 対応状況：
-  - ok: list
+  - ok: unordered list
   - ok: heading
   - ok: horizontal line
   - ok: link
   - ok: code block
+  - ok: ordered list
   - ng: table
   - ng: inline clode
 
@@ -45,12 +46,27 @@ Usage:
 
 ## Web UI
 
+How to build.
+
 ```
 cd js
 dune build ./js.bc.js
 cd ..
-sudo cp _build/default/js/js.bc.js webui
+sudo cp _build/default/js/js.bc.js docs
 ```
+
+## Memo
+
+Numbered list をちゃんと実装することを考えると，`omd` で再実装した方が良いかも．
+
+1. Step 1.
+   1. Step 1-1.
+   2. Step 1-2.
+   3. Step 1-3.
+2. Step 2.
+   1. Step 2-1.
+   2. Step 2-2.
+3. Step 3.
 
 ## Background
 

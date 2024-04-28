@@ -55,7 +55,7 @@ body {
 }
 
 #left-pane > .title::before {
-  right: -20px;
+  right: -21px;
   border-left: 20px solid #3efefe;
 }
 
@@ -89,7 +89,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 14pt;
+  font-size: 12pt;
   color: #303030;
   outline: none;
 }
