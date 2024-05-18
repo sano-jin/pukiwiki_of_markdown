@@ -17,6 +17,6 @@ let read_until_eof () : String.t Deferred.t =
 let () =
   ignore
     ( read_until_eof () >>= fun str ->
-      print_endline @@ Pukiwiki_of_markdown.pukiwiki_of_markdown str;
+      print_endline @@ Pukiwiki_of_markdown.pukiwiki_of_markdown str ("「", "」");
       exit 0 );
   ignore @@ Scheduler.go ()

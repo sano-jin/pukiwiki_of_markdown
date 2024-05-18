@@ -6,7 +6,7 @@ const convert = () => {
 
   const inputText = elemInput.value;
   console.log(inputText);
-  const outputText = PwOfMd.convert(inputText);
+  const outputText = PwOfMd.convert(inputText, "「", "」");
   console.log(outputText);
   elemOutput.innerText = outputText;
 };

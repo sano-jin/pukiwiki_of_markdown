@@ -1,7 +1,7 @@
 open Base
 
 (** Translate markdown syntax to the pukiwiki syntax. *)
-let pukiwiki_of_markdown md =
+let pukiwiki_of_markdown md (paren1, paren2) =
   let conv_hr md =
     let hr = Str.regexp {|^---|} in
     md |> Str.global_replace hr "----"
@@ -64,8 +64,16 @@ let pukiwiki_of_markdown md =
     in
     md |> Str.split_delim rcode |> loop
   in
-  md |> conv_hr |> conv_ulist |> conv_olist |> conv_space |> conv_heading |> conv_link
-  |> conv_code
+  let conv_inline_code md =
+    let rs2 = Str.regexp {|`\([^`]*\)`|} in
+    md |> Str.global_replace rs2 (paren1 ^ "\\1" ^ paren2)
+  in
+
+  let pukiwiki =
+    md |> conv_hr |> conv_ulist |> conv_olist |> conv_space |> conv_heading |> conv_link
+    |> conv_code |> conv_inline_code
+  in
+  pukiwiki
 
 (** Translate pukiwiki syntax to the markdown syntax. *)
 let _markdown_of_pukiwiki pukiwiki =

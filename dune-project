@@ -23,11 +23,10 @@
    ocaml 
    dune 
    core 
-   async
-   js_of_ocaml
    js_of_ocaml-compiler
+   js_of_ocaml
    js_of_ocaml-ppx
-   ppx
+   re2
    )
  (tags
   (topics "to describe" your project)))
