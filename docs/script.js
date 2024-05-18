@@ -6,9 +6,12 @@ const convert = () => {
 
   const inputText = elemInput.value;
   console.log(inputText);
-  const outputText = PwOfMd.convert(inputText, "「", "」");
+
+  const text = inputText.replace("だ", "DA1DA2DA3");
+  const outputText = PwOfMd.convert(text, "「", "」");
   console.log(outputText);
-  elemOutput.innerText = outputText;
+  const output = outputText.replace("DA1DA2DA3", "だ");
+  elemOutput.innerText = output;
 };
 
 const copy = () => {
