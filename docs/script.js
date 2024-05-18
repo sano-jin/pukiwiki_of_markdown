@@ -7,10 +7,10 @@ const convert = () => {
   const inputText = elemInput.value;
   console.log(inputText);
 
-  const text = inputText.replace("だ", "DA1DA2DA3");
+  const text = inputText.replaceAll("だ", "DA1DA2DA3");
   const outputText = PwOfMd.convert(text, "「", "」");
   console.log(outputText);
-  const output = outputText.replace("DA1DA2DA3", "だ");
+  const output = outputText.replaceAll("DA1DA2DA3", "だ");
   elemOutput.innerText = output;
 };
 
