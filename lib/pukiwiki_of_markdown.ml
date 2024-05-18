@@ -65,7 +65,7 @@ let pukiwiki_of_markdown md (paren1, paren2) =
     md |> Str.split_delim rcode |> loop
   in
   let conv_inline_code md =
-    let rs2 = Str.regexp {|`\([^`]*\)`|} in
+    let rs2 = Str.regexp {|[^\\]`\([^`]*[^\\]\)`|} in
     md |> Str.global_replace rs2 (paren1 ^ "\\1" ^ paren2)
   in
 
