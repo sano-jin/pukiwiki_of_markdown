@@ -68,12 +68,21 @@ let pukiwiki_of_markdown md (paren1, paren2) =
     let rs2 = Str.regexp {|[^\\]`\([^`]*[^\\]\)`|} in
     md |> Str.global_replace rs2 (paren1 ^ "\\1" ^ paren2)
   in
+  let conv_inline_math md =
+    let rs2 = Str.regexp {|[^\\]\$\([^$]*[^\\]\)\$|} in
+    md |> Str.global_replace rs2 "\\(\\1\\)"
+  in
+  let conv_block_math md =
+    let rs2 = Str.regexp {|[^\\]\$\$\([^$]*[^\\]\)\$\$|} in
+    md |> Str.global_replace rs2 "\\[\\1\\]"
+  in
 
   let pukiwiki =
     md |> conv_hr |> conv_ulist |> conv_olist |> conv_space |> conv_heading |> conv_link
-    |> conv_code |> conv_inline_code
+    |> conv_code |> conv_inline_code |> conv_inline_math |> conv_block_math
   in
   pukiwiki
+(* String.sub ~pos:1 ~len:(String.length pukiwiki - 1) pukiwiki *)
 
 (** Translate pukiwiki syntax to the markdown syntax. *)
 let _markdown_of_pukiwiki pukiwiki =

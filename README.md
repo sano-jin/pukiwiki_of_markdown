@@ -11,8 +11,20 @@ markdown から pukiwiki への変換ツール．
   - ok: link
   - ok: code block
   - ok: ordered list
+  - ok: inline code
+  - ok: inline math
+  - ok: math block
   - ng: table
-  - ng: inline clode
+
+## Warning
+
+- 正規表現でガンガン置換しているだけ．
+  OCaml コードを js_of_ocaml で javascript に変換して，それを呼び出している．
+  OCaml の標準の正規表現ライブラリが unicode 対応していないから？
+  （もしかしたら js_of_ocaml のせいもあるかも知れない）
+  か，挙動が怪しげな部分もある．
+- 自分で微修正しながら使う分には良いが，他の人に勧められるかというと微妙かも知れない．
+- 本気で作り直すなら，omd をベースにするのが良さそう．
 
 ## How to use
 
