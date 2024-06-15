@@ -65,16 +65,16 @@ let pukiwiki_of_markdown md (paren1, paren2) =
     md |> Str.split_delim rcode |> loop
   in
   let conv_inline_code md =
-    let rs2 = Str.regexp {|[^\\]`\([^`]*[^\\]\)`|} in
-    md |> Str.global_replace rs2 (paren1 ^ "\\1" ^ paren2)
+    let rs2 = Str.regexp {|\([^\\]\)`\([^`]*[^\\]\)`|} in
+    md |> Str.global_replace rs2 ("\\1" ^ paren1 ^ "\\2" ^ paren2)
   in
   let conv_inline_math md =
-    let rs2 = Str.regexp {|[^\\]\$\([^$]*[^\\]\)\$|} in
-    md |> Str.global_replace rs2 "\\(\\1\\)"
+    let rs2 = Str.regexp {|\([^\\$]\)\$\([^$]*[^\\]\)\$|} in
+    md |> Str.global_replace rs2 "\\1\\(\\2\\)"
   in
   let conv_block_math md =
-    let rs2 = Str.regexp {|[^\\]\$\$\([^$]*[^\\]\)\$\$|} in
-    md |> Str.global_replace rs2 "\\[\\1\\]"
+    let rs2 = Str.regexp {|\([^\\$]\)\$\$\([^$]*[^\\]\)\$\$|} in
+    md |> Str.global_replace rs2 "\\1\\[\\2\\]"
   in
 
   let pukiwiki =
